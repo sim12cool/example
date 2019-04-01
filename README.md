@@ -1,4 +1,4 @@
-# Simple LSTM based Gender Predictor 
+# Simple LSTM based Gender predictor 
 Predict the gender of a name using LSTM
 
 Requirements:
