@@ -31,8 +31,10 @@ def load_model(maleFile, femaleFile):
 	maxlen = len(max( m_names , key=len)) + len(max( f_names , key=len))
 
 	chars = set(  "".join(m_names) + "".join(f_names)  )
-	char_indices = dict((c, i) for i, c in enumerate(chars))
-	indices_char = dict((i, c) for i, c in enumerate(chars))
+	char_indices = [(c, i) for i, c in enumerate(chars)]
+	indices_char = [(i, c) for i, c in enumerate(chars)]
+	char_indices = dict(char_indices)
+	indices_char = dict(indices_char)
 
 	with open("model.json", 'r') as content_file:
 		json_string = content_file.read()
@@ -53,12 +55,6 @@ if __name__ == "__main__":
 		else:
 			print ("Female")
 			
-			
-num1 = 15
-num2 = 12
-  
-# Adding two nos 
-sum = num1 + num2 
   
 # printing values 
 print("Sum of {0} and {1} is {2}" .format(num1, num2, sum)) 
